@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    parameters {
+        choice choices: ['USA', 'Canada', 'Australia'], description: 'Choose your country.', name: 'COUNTRY'
+        choice choices: ['ECR', 'Dockerhub'], description: 'Choose your registry', name: 'REGISTRY'
+    }
+
     stages {
         stage('build') {
             steps {
