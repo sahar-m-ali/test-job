@@ -9,6 +9,14 @@ pipeline {
 
     stages {
         stage('build') {
+            
+        when {
+            expression {
+                env.NAME == 'odilia'    //this will run if the cdt fits app equal to odilia
+
+            }
+        }
+
             steps {
                 echo 'Hello World'
             }
